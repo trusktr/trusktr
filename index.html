@@ -1,0 +1,48 @@
+<script src="./template.js"></script>
+
+<script>
+	console.log('hello html')
+</script>
+
+<div overlay>
+	<h1>Hi, I'm Joe.</h1>
+	<h2>Welcome to my scratchpad.</h2>
+</div>
+
+<style>
+	[overlay] {
+		padding: 20px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		color: #8890c1;
+	}
+</style>
+
+<lume-scene webgl>
+	<!-- a rig that allows zooming/rotating a camera -->
+	<lume-camera-rig distance="800">
+		<!-- position lights relative to the rig's camera -->
+		<lume-element3d slot="camera-child">
+			<lume-point-light position="300 300 -500" intensity="800" color="deeppink"></lume-point-light>
+			<lume-point-light position="-300 -300 -500" intensity="800" color="royalblue"></lume-point-light>
+			<lume-ambient-light intensity="0.4" color="white"></lume-ambient-light>
+		</lume-element3d>
+	</lume-camera-rig>
+
+	<lume-box
+		id="box"
+		size="250 250 250"
+		rotation="10 20 30"
+		mount-point="0.5 0.5 0.5"
+		dithering
+		receive-shadow="false"
+	></lume-box>
+</lume-scene>
+
+<script type="module">
+	import 'lume'
+
+	// rotate the box around y, 10 deg per second
+	box.rotation = (x, y, z, t, dt) => [x, y + (dt / 1000) * 10, z]
+</script>
