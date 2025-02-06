@@ -4,24 +4,31 @@
 	console.log('hello html')
 </script>
 
-<div overlay>
-	<h1>Hi, I'm Joe.</h1>
-	<h2>Welcome to my scratchpad.</h2>
-</div>
-
 <style>
 	[overlay] {
 		padding: 20px;
 		position: absolute;
 		top: 0;
 		left: 0;
-		color: #8890c1;
+		color: #7082d0;
+	}
+
+	[overlay2] {
+		padding: 20px;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		color: #d96693;
+
+		a {
+			color: inherit;
+		}
 	}
 </style>
 
 <lume-scene webgl>
 	<!-- a rig that allows zooming/rotating a camera -->
-	<lume-camera-rig distance="800">
+	<lume-camera-rig distance="1100">
 		<!-- position lights relative to the rig's camera -->
 		<lume-element3d slot="camera-child">
 			<lume-point-light position="300 300 -500" intensity="800" color="deeppink"></lume-point-light>
@@ -39,6 +46,14 @@
 		receive-shadow="false"
 	></lume-box>
 </lume-scene>
+
+<div overlay>
+	<h1>Hi, I'm Joe.</h1>
+</div>
+
+<div overlay2>
+	<h2><a href="./scratchpad/index.html">Enter my scratchpad.</a></h2>
+</div>
 
 <script type="module">
 	import 'lume'

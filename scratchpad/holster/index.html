@@ -1,0 +1,42 @@
+<script src="./importmap.js"></script>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		height: 100%;
+		background: #111;
+	}
+</style>
+
+<lume-scene
+	id="scene"
+	webgl
+	environment="https://rawcdn.githack.com/trusktr/assets/3437564ac855bb0551c25ae990aff94db488c36e/scratchspace/liminal-type/Grad_Hdri_05.jpg"
+>
+	<lume-camera-rig min-distance="5" distance="20" dolly-speed="0.005">
+		<lume-point-light
+			id="light"
+			slot="camera-child"
+			intensity="2500000"
+			color="white"
+			position="500 500 500"
+		></lume-point-light>
+	</lume-camera-rig>
+
+	<lume-gltf-model
+		id="model"
+		mount-point="0.5 0.5 0.5"
+		src="https://rawcdn.githack.com/trusktr/assets/18db535d6a29cdb181b7af9341a9fa1e2633c37a/scratchpad/holster/Holster3.glb"
+        position="0 0.7 0""
+	></lume-gltf-model>
+</lume-scene>
+
+<script type="module">
+	import 'lume'
+	import * as THREE from 'three'
+
+	// Temporary: the new default in the next Lume release (for physically correct lights)
+	scene.physicallyCorrectLights = true
+	light.decay = 2
+</script>

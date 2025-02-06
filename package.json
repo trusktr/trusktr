@@ -1,0 +1,13 @@
+{
+	"type": "module",
+	"scripts": {
+		"start": "five-server . --open index.html --port=4444",
+		"postinstall": "patch-package",
+		"prettier": "prettier . --write"
+	},
+	"devDependencies": {
+		"five-server": "^0.4.0",
+		"patch-package": "^8.0.0",
+		"prettier": "^3.4.2"
+	}
+}
