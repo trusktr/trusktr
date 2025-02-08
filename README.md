@@ -1,3 +1,13 @@
+---
+title: trusktr
+emoji: 🖼️
+license: mit
+colorFrom: yellow
+colorTo: gray
+sdk: static
+pinned: true
+---
+
 ### Hi there 👋
 
 <!--
