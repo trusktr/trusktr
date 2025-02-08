@@ -25,6 +25,7 @@ tags:
     ui,
     ux,
     3d,
+    graphics,
     3d-graphics,
     web-3d,
     signals,
