@@ -2,10 +2,13 @@
 title: trusktr
 emoji: 🖼️
 license: mit
-colorFrom: yellow
-colorTo: gray
+colorFrom: pink
+colorTo: blue
 sdk: static
 pinned: true
+thumbnail: >-
+  https://cdn-uploads.huggingface.co/production/uploads/675f68fa5e2461f83760a0ae/shIqmGK6qN68OnUZjHskF.jpeg
+short_description: My landing page and scratch pad with live demos.
 ---
 
 ### Hi there 👋
