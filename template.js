@@ -21,7 +21,16 @@ const html = (strings, ...values) => String.raw(strings, ...values)
 
 	const script = document.currentScript
 	const title = script.getAttribute('title') ?? ''
-	const base = script.getAttribute('base') ?? (inIframe ? window.parent.location.href : '')
+
+	const parentHref = () => {
+		try {
+			return window.parent.location.href
+		} catch (e) {
+			return ''
+		}
+	}
+
+	const base = script.getAttribute('base') ?? (inIframe ? parentHref : '')
 
 	if (base) document.write(`<base href="${base}" />`)
 
