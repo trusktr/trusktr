@@ -17,28 +17,53 @@
 const html = (strings, ...values) => String.raw(strings, ...values)
 
 {
-	console.log('hello world')
+	const inIframe = window.parent !== window
 
-	document.write(html`
-		<html>
-			<head>
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
+	const script = document.currentScript
+	const title = script.getAttribute('title') ?? ''
+	const base = script.getAttribute('base') ?? (inIframe ? window.parent.location.href : '')
 
-				<style>
-					html,
-					body {
-						margin: 0;
-						height: 100%;
-						background: radial-gradient(circle, rgb(90, 97, 128) 0%, rgb(36, 32, 36) 100%);
-						color: #ffb6b6;
-						font-family: sans-serif;
-					}
-				</style>
+	if (base) document.write(`<base href="${base}" />`)
 
-				<script src="./importmap.js"></script>
-			</head>
+	const dir = new URL(script.src).href.split('/').slice(0, -1).join('/')
+	const template = script.getAttribute('template') || dir + '/template.html'
+	const importmap = script.getAttribute('importmap') || dir + '/importmap.js'
 
-			<body></body>
-		</html>
-	`)
+	// Fetch our shared top-level HTML template synchronously. If we don't do it
+	// synchronously, we won't be able to take advantage of the next
+	// document.write trick, which has to run during parsing.
+	const r = new XMLHttpRequest()
+	r.open('GET', template, /*not asynchronous!*/ false)
+	r.send()
+
+	let templateHtml = r.responseText
+
+	if (importmap) templateHtml = templateHtml.replace('src="./importmap.js"', `src="${importmap}"`)
+
+	// This script executes during parsing, and this line writes the HTML
+	// template synchronously, creating the <head> and <body> elements. When the
+	// parser continues parsing after this code runs, any further content it
+	// encounters while parsing will then be placed into the created <body>.
+	// This is a nifty trick for sharing a top-level re-usable HTML template!
+	document.write(templateHtml)
+
+	// Each example specifies the title for its tab by putting a title="foo"
+	// attribute on the tag that is executing this code.
+	document.title = 'Joe Pea' + (title ? ` - ${title}` : '')
+
+	// If we're in an iframe, hijack links so they nav the parent window. TODO
+	// do this only when the parent window is ours (don't try to mess with other
+	// sites embedding us).
+	if (inIframe) {
+		window.addEventListener('DOMContentLoaded', () => {
+			const links = Array.from(document.querySelectorAll('a'))
+
+			for (const link of links) {
+				link.addEventListener('click', event => {
+					event.preventDefault()
+					window.parent.location = link.href
+				})
+			}
+		})
+	}
 }

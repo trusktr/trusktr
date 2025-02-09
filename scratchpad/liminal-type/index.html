@@ -1,50 +1,49 @@
-<body>
-	<script src="./importmap.js"></script>
+<script src="../../template.js"></script>
+<script type="module">
+	import '@lume/live-code'
+</script>
 
-	<style>
-		html,
-		body {
-			margin: 0;
-			height: 100%;
-			background: #111;
-		}
-	</style>
+<live-code>
+	<template>
+		<base href="/" />
+		<script src="./template.js" importmap="/scratchpad/liminal-type/importmap.js"></script>
 
-	<lume-scene
-		id="scene"
-		webgl
-		environment="https://rawcdn.githack.com/trusktr/assets/3437564ac855bb0551c25ae990aff94db488c36e/scratchspace/liminal-type/Grad_Hdri_05.jpg"
-	>
-		<lume-camera-rig min-distance="100" distance="2000">
-			<lume-point-light
-				id="light"
-				slot="camera-child"
-				intensity="2500000"
-				color="#348EDD"
-				position="500 500 500"
-			></lume-point-light>
-		</lume-camera-rig>
+		<lume-scene
+			id="scene"
+			webgl
+			environment="https://rawcdn.githack.com/trusktr/assets/3437564ac855bb0551c25ae990aff94db488c36e/scratchspace/liminal-type/Grad_Hdri_05.jpg"
+		>
+			<lume-camera-rig min-distance="100" distance="2000" horizontal-angle="80">
+				<lume-point-light
+					id="light"
+					slot="camera-child"
+					intensity="2500000"
+					color="#348EDD"
+					position="500 500 500"
+				></lume-point-light>
+			</lume-camera-rig>
 
-		<lume-gltf-model
-			id="model"
-			mount-point="0.5 0.5 0.5"
-			src="https://rawcdn.githack.com/trusktr/assets/3437564ac855bb0551c25ae990aff94db488c36e/scratchspace/liminal-type/Liminal_type.glb"
-		></lume-gltf-model>
-	</lume-scene>
+			<lume-gltf-model
+				id="model"
+				mount-point="0.5 0.5 0.5"
+				src="https://rawcdn.githack.com/trusktr/assets/3437564ac855bb0551c25ae990aff94db488c36e/scratchspace/liminal-type/Liminal_type.glb"
+			></lume-gltf-model>
+		</lume-scene>
 
-	<script type="module">
-		import 'lume'
-		import * as THREE from 'three'
+		<script type="module">
+			import 'lume'
+			import * as THREE from 'three'
 
-		model.on('MODEL_LOAD', () => {
-			model.three.traverse(n => {
-				if (!n.isMesh) return
-				n.material = new THREE.MeshPhysicalMaterial({metalness: 1, roughness: 0})
+			model.on('MODEL_LOAD', () => {
+				model.three.traverse(n => {
+					if (!n.isMesh) return
+					n.material = new THREE.MeshPhysicalMaterial({metalness: 1, roughness: 0})
+				})
 			})
-		})
 
-		// Temporary: the new default in the next Lume release (for physically correct lights)
-		scene.physicallyCorrectLights = true
-		light.decay = 2
-	</script>
-</body>
+			// Temporary: the new default in the next Lume release (for physically correct lights)
+			scene.physicallyCorrectLights = true
+			light.decay = 2
+		</script>
+	</template>
+</live-code>
