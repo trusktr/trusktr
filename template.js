@@ -50,20 +50,4 @@ const html = (strings, ...values) => String.raw(strings, ...values)
 	// Each example specifies the title for its tab by putting a title="foo"
 	// attribute on the tag that is executing this code.
 	document.title = 'Joe Pea' + (title ? ` - ${title}` : '')
-
-	// If we're in an iframe, hijack links so they nav the parent window. TODO
-	// do this only when the parent window is ours (don't try to mess with other
-	// sites embedding us).
-	if (inIframe) {
-		window.addEventListener('DOMContentLoaded', () => {
-			const links = Array.from(document.querySelectorAll('a'))
-
-			for (const link of links) {
-				link.addEventListener('click', event => {
-					event.preventDefault()
-					window.parent.location = link.href
-				})
-			}
-		})
-	}
 }
