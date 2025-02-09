@@ -2,11 +2,11 @@
 // a convenient way to generate it based on dynamic features such as variables.
 {
 	// Tip: easily generate a CDN importmap using https://generator.jspm.io.
-	document.write(html`
+	document.write(/*html*/ `
 		<script type="importmap">
 			{
 				"imports": {
-			                 ${'' /* lume dependencies */}
+                    ${'' /* lume dependencies *************************************************** */}
 					"lume": "https://cdn.jsdelivr.net/npm/lume@0.3.0-alpha.44/dist/index.js",
 					"three": "https://cdn.jsdelivr.net/npm/three@0.170.0/src/Three.js",
 					"three/webgpu": "https://cdn.jsdelivr.net/npm/three@0.170.0/src/Three.WebGPU.js",
@@ -30,8 +30,8 @@
 					"solid-js/store": "https://cdn.jsdelivr.net/npm/solid-js@1.9.3/store/dist/dev.js",
 					"solid-js/web": "https://cdn.jsdelivr.net/npm/solid-js@1.9.3/web/dist/dev.js",
 
-			                 ${'' /* live-code dependencies (codemirror mainly) */}
-					"@lume/live-code": "https://cdn.jsdelivr.net/npm/@lume/live-code@0.6.6/dist/index.js",
+                    ${'' /* live-code dependencies (codemirror mainly) ************************** */}
+					"@lume/live-code": "https://cdn.jsdelivr.net/npm/@lume/live-code@0.6.7/dist/index.js",
 					"@babel/runtime/helpers/extends": "https://cdn.jsdelivr.net/npm/@babel/runtime@7.25.6/helpers/esm/extends.js",
 					"@codemirror/autocomplete": "https://cdn.jsdelivr.net/npm/@codemirror/autocomplete@6.18.0/dist/index.js",
 					"@codemirror/commands": "https://cdn.jsdelivr.net/npm/@codemirror/commands@6.6.1/dist/index.js",
@@ -41,7 +41,7 @@
 					"@codemirror/language": "https://cdn.jsdelivr.net/npm/@codemirror/language@6.10.2/dist/index.js",
 					"@codemirror/lint": "https://cdn.jsdelivr.net/npm/@codemirror/lint@6.8.1/dist/index.js",
 					"@codemirror/search": "https://cdn.jsdelivr.net/npm/@codemirror/search@6.5.6/dist/index.js",
-					"@codemirror/state": "https://cdn.jsdelivr.net/npm/@codemirror/state@6.4.1/dist/index.js",
+					"@codemirror/state": "https://cdn.jsdelivr.net/npm/@codemirror/state@6.5.2/dist/index.js",
 					"@codemirror/view": "https://cdn.jsdelivr.net/npm/@codemirror/view@6.33.0/dist/index.js",
 					"@lezer/common": "https://cdn.jsdelivr.net/npm/@lezer/common@1.2.1/dist/index.js",
 					"@lezer/css": "https://cdn.jsdelivr.net/npm/@lezer/css@1.1.9/dist/index.js",
@@ -49,6 +49,7 @@
 					"@lezer/html": "https://cdn.jsdelivr.net/npm/@lezer/html@1.3.10/dist/index.js",
 					"@lezer/javascript": "https://cdn.jsdelivr.net/npm/@lezer/javascript@1.4.17/dist/index.js",
 					"@lezer/lr": "https://cdn.jsdelivr.net/npm/@lezer/lr@1.4.2/dist/index.js",
+                    "@marijn/find-cluster-break": "https://cdn.jsdelivr.net/npm/@marijn/find-cluster-break@1.0.2/src/index.js",
 					"@uiw/codemirror-theme-noctis-lilac": "https://cdn.jsdelivr.net/npm/@uiw/codemirror-theme-noctis-lilac@4.23.2/esm/index.js",
 					"@uiw/codemirror-themes": "https://cdn.jsdelivr.net/npm/@uiw/codemirror-themes@4.23.2/esm/index.js",
 					"code-mirror-el": "https://cdn.jsdelivr.net/npm/code-mirror-el@0.1.5/dist/index.js",
