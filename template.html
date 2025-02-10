@@ -48,10 +48,8 @@ repeat it on every page.
 
 			window.addEventListener('child-window-nav', event => (window.location.href = event.detail))
 
-			// Add a class for HuggingFace so we can avoid rendering emojis there ().
-			try {
-				if (location.href.includes('static.hf.space')) document.body.classList.add('huggingface')
-			} catch (e) {}
+			// Add a class for HuggingFace so we can avoid rendering emojis there (https://discuss.huggingface.co/t/139916/2).
+			if (location.href.includes('static.hf.space')) document.body.classList.add('huggingface')
 		</script>
 
 		<style>
