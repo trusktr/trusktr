@@ -32,10 +32,21 @@ repeat it on every page.
 			// do this only when the parent window is ours (don't try to mess with other
 			// sites embedding us).
 			if (inIframe) {
+				// window.addEventListener('DOMContentLoaded', () => {
+				// 	for (const link of Array.from(document.querySelectorAll('a'))) link.target = '_parent'
+				// })
+
 				window.addEventListener('DOMContentLoaded', () => {
-					for (const link of Array.from(document.querySelectorAll('a'))) link.target = '_parent'
+					for (const link of Array.from(document.querySelectorAll('a'))) {
+						link.addEventListener('click', event => {
+							event.preventDefault()
+							window.parent.dispatchEvent(new CustomEvent('child-window-nav', {detail: link.href}))
+						})
+					}
 				})
 			}
+
+			window.addEventListener('child-window-nav', event => (window.location.href = event.detail))
 		</script>
 	</head>
 
