@@ -50,9 +50,7 @@ repeat it on every page.
 
 			// Add a class for HuggingFace so we can avoid rendering emojis there ().
 			try {
-				if (inIframe && window.parent.location.host.includes('static.hf.space')) {
-					document.body.classList.add('huggingface')
-				}
+				if (location.host.includes('static.hf.space')) document.body.classList.add('huggingface')
 			} catch (e) {}
 		</script>
 
