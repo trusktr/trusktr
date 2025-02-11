@@ -1,3 +1,6 @@
+<!--
+Uncomment this (and the closing elements at the bottom) to enable live code editing.
+
 <script src="../../template.js"></script>
 <script type="module">
 	import '@lume/live-code'
@@ -6,38 +9,135 @@
 <live-code>
 	<template>
 		<base href="${location.href}" />
-		<script src="../../template.js" importmap="./importmap.js"></script>
+-->
 
-		<lume-scene
-			id="scene"
-			webgl
-			environment="https://rawcdn.githack.com/trusktr/assets/3437564ac855bb0551c25ae990aff94db488c36e/scratchspace/liminal-type/Grad_Hdri_05.jpg"
-		>
-			<lume-camera-rig min-distance="5" distance="10" dolly-speed="0.005">
-				<lume-point-light
-					id="light"
-					slot="camera-child"
-					intensity="2500000"
-					color="white"
-					position="500 500 500"
-				></lume-point-light>
-			</lume-camera-rig>
+<script src="../../template.js" importmap="./importmap.js"></script>
 
-			<lume-gltf-model
-				id="model"
-				mount-point="0.5 0.5 0.5"
-				src="https://rawcdn.githack.com/trusktr/assets/18db535d6a29cdb181b7af9341a9fa1e2633c37a/scratchpad/holster/Holster3.glb"
-				position="0 0.7 0"
-			></lume-gltf-model>
-		</lume-scene>
+<lume-scene
+	id="scene"
+	webgl
+	background="https://rawcdn.githack.com/trusktr/assets/913e7bba99710e8b313cae22de8bef002de1f764/scratchpad/holster/brown_photostudio_02.jpg"
+	equirectangular-background
+	background-blur="0.05"
+	environment="https://rawcdn.githack.com/trusktr/assets/913e7bba99710e8b313cae22de8bef002de1f764/scratchpad/holster/brown_photostudio_02.jpg"
+	shadow-mode="vsm"
+>
+	<lume-camera-rig
+		min-distance="5"
+		distance="10"
+		dolly-speed="0.005"
+		min-horizontal-angle="-50"
+		max-horizontal-angle="50"
+		min-vertical-angle="-50"
+		max-vertical-angle="50"
+		rotation="0 10 0"
+	></lume-camera-rig>
 
-		<script type="module">
-			import 'lume'
-			import * as THREE from 'three'
+	<lume-gltf-model
+		id="model"
+		mount-point="0.5 0.5 0.5"
+		src="https://rawcdn.githack.com/trusktr/assets/913e7bba99710e8b313cae22de8bef002de1f764/scratchpad/holster/Holster.glb"
+		position="0 0.7 0"
+	></lume-gltf-model>
 
-			// Temporary: the new default in the next Lume release (for physically correct lights)
-			scene.physicallyCorrectLights = true
-			light.decay = 2
-		</script>
+	<lume-spot-light
+		id="light"
+		slot="camera-child"
+		intensity="9000"
+		color="white"
+		position="50 0 50"
+		shadow-map-width="2048"
+		shadow-map-height="2048"
+		shadow-bias="-0.001"
+		shadow-radius="2"
+		shadow-camera-near="60"
+		shadow-camera-far="80"
+		target="#model"
+		angle="2.8"
+		penumbra="0"
+	></lume-spot-light>
+</lume-scene>
+
+<holster-ui></holster-ui>
+
+<style>
+	html,
+	body {
+		overflow: hidden;
+	}
+
+	holster-ui {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		box-sizing: border-box;
+		max-width: calc(100% - 20px);
+	}
+</style>
+
+<script type="module">
+	import {Motor} from 'lume'
+	import {createEffect, batch} from 'solid-js'
+	import {createMutable} from 'solid-js/store'
+	import * as THREE from 'three'
+	import './holster-ui.js'
+
+	// TODO environment-intensity scene attribute
+	scene.three.environmentIntensity = 1.25
+
+	// Temporary: the new default in the next Lume release (for physically correct lights)
+	scene.physicallyCorrectLights = true
+	light.decay = 2
+
+	const state = createMutable({holsterLeatherObject: [], beltLeatherObjects: []})
+
+	model.on('MODEL_LOAD', () => {
+		let mainColor = new THREE.Color(0x74242f)
+
+		batch(() => {
+			model.three.traverse(node => {
+				if (!node.isMesh) return
+
+				node.castShadow = true
+				node.receiveShadow = true
+				node.material.side = THREE.DoubleSide
+
+				if (node.name === 'Main') mainColor.copy(node.material.color)
+
+				if (node.name === 'Belt') {
+					state.beltLeatherObjects.push(node)
+					node.material = node.material.clone()
+				}
+
+				if (node.name === 'Concho') {
+					node.material.color.setRGB(0.3, 0.3, 0.3)
+					node.material.roughness = 0.12
+				}
+			})
+
+			model.three.traverse(node => {
+				if (!node.isMesh) return
+
+				if (node.name !== 'Belt' && node.material.color.getHex() === mainColor.getHex())
+					state.holsterLeatherObject.push(node)
+			})
+		})
+	})
+
+	const holsterUI = document.querySelector('holster-ui')
+
+	holsterUI.leatherColors = '#070707 #333333 #4c0c15 #4c1c00 #1e2300 #002426 #110022'
+	holsterUI.selectedBeltColor = '#4c0c15'
+	holsterUI.selectedHolsterColor = '#4c0c15'
+
+	createEffect(() => {
+		for (const obj of state.beltLeatherObjects) obj.material.color.set(holsterUI.selectedBeltColor)
+		for (const obj of state.holsterLeatherObject) obj.material.color.set(holsterUI.selectedHolsterColor)
+		model.needsUpdate()
+	})
+</script>
+
+<!--
 	</template>
 </live-code>
+-->
