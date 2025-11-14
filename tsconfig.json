@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"allowJs": true,
+		"checkJs": true,
+		"noEmit": true,
+
+		"target": "esnext",
+		"module": "esnext",
+		"moduleResolution": "bundler",
+		"lib": ["es2023", "dom", "dom.iterable"],
+		"isolatedModules": true,
+		"verbatimModuleSyntax": true,
+		"skipLibCheck": true, // Don't type check libraries, as that can be slow.
+
+		"strict": true
+	}
+}

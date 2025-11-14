@@ -5,14 +5,14 @@ const purple = '#5f366f'
 export const PictureFrameScene = element('picture-frame-scene')(
 	class PictureFrameScene extends Element {
 		static observedAttributeHandlers = {
-			picture: attribute.string(),
-			frameTexture: attribute.string(),
-			frameShape: attribute.string(),
-			frameWidth: attribute.number(),
-			frameHeight: attribute.number(),
-			frameThickness: attribute.number(),
-			frameColor: attribute.string(),
-			debug: attribute.boolean(),
+			picture: attribute.string,
+			frameTexture: attribute.string,
+			frameShape: attribute.string,
+			frameWidth: attribute.number,
+			frameHeight: attribute.number,
+			frameThickness: attribute.number,
+			frameColor: attribute.string,
+			debug: attribute.boolean,
 		}
 
 		picture = ''

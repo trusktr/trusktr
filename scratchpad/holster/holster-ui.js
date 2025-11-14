@@ -2,13 +2,14 @@ import {Element, element, attribute, html, signalify, createMemo} from 'lume'
 import {stringToArray} from 'lume/dist/xyz-values/utils.js'
 
 export const HolsterUI = element('holster-ui')(
-	class extends Element {
+	class HolsterUIElement extends Element {
 		static observedAttributeHandlers = {
-			leatherColors: attribute.string(),
+			leatherColors: attribute.string,
 		}
 
 		leatherColors = 'red green blue'
 
+		/** @type {() => string[]} */
 		#colorsArray = () => stringToArray(this.leatherColors)
 
 		selectedBeltColor = 'red'
@@ -32,6 +33,7 @@ export const HolsterUI = element('holster-ui')(
 			})
 		}
 
+		/** @returns {Node | Node[]} */
 		template = () => html`
 			<label>Belt color:</label>
 			<div class="colors">
@@ -62,6 +64,7 @@ export const HolsterUI = element('holster-ui')(
 			</div>
 		`
 
+		/** @type {string} */
 		css = /*css*/ `
             :host {
                 color: black;
