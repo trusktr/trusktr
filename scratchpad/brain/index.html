@@ -1,0 +1,160 @@
+<script src="../../template.js"></script>
+<script type="module">
+	import '@lume/live-code'
+</script>
+
+<live-code>
+	<template>
+		<base href="${location.href}" />
+		<script src="../../template.js" importmap="./importmap.js"></script>
+
+		<style>
+			body {
+				margin: 0;
+				overflow: hidden;
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+			}
+
+			#controls {
+				position: absolute;
+				top: 20px;
+				left: 20px;
+				background: rgba(0, 0, 0, 0.7);
+				color: white;
+				padding: 20px;
+				border-radius: 8px;
+				min-width: 300px;
+				backdrop-filter: blur(10px);
+				z-index: 100;
+			}
+
+			#controls h3 {
+				margin: 0 0 15px 0;
+				font-size: 18px;
+				font-weight: 600;
+			}
+
+			.control-group {
+				margin-bottom: 15px;
+			}
+
+			.control-group label {
+				display: block;
+				margin-bottom: 5px;
+				font-size: 13px;
+				opacity: 0.9;
+			}
+
+			.control-group input[type='range'] {
+				width: 100%;
+				margin-bottom: 5px;
+			}
+
+			.control-group .value {
+				display: inline-block;
+				min-width: 60px;
+				text-align: right;
+				font-family: 'Courier New', monospace;
+				font-size: 12px;
+				opacity: 0.8;
+			}
+
+			#info {
+				margin-top: 15px;
+				padding-top: 15px;
+				border-top: 1px solid rgba(255, 255, 255, 0.2);
+				font-size: 12px;
+				opacity: 0.7;
+			}
+
+			#info div {
+				margin-bottom: 5px;
+			}
+		</style>
+
+		<div id="controls">
+			<h3>🧠 Brain Volume Renderer</h3>
+
+			<div class="control-group">
+				<label> Threshold: <span class="value" id="threshold-value">0</span> </label>
+				<input type="range" id="threshold" min="0" max="1000" step="1" value="0" />
+			</div>
+
+			<div class="control-group">
+				<label> Sample Stride: <span class="value" id="stride-value">2</span> </label>
+				<input type="range" id="stride" min="1" max="5" step="1" value="2" />
+			</div>
+
+			<div class="control-group">
+				<label> Point Size: <span class="value" id="size-value">0.5</span> </label>
+				<input type="range" id="point-size" min="0.01" max="2" step="0.01" value="0.5" />
+			</div>
+
+			<div class="control-group">
+				<label> Jitter (voxels): <span class="value" id="jitter-value">0.15</span> </label>
+				<input type="range" id="jitter" min="0" max="5" step="0.01" value="0.15" />
+			</div>
+
+			<div class="control-group">
+				<label> Slice Position (%): <span class="value" id="slice-position-value">50</span> </label>
+				<input type="range" id="slice-position" min="0" max="100" step="0.1" value="50" />
+			</div>
+
+			<div class="control-group">
+				<label> Slice Thickness (%): <span class="value" id="slice-thickness-value">100</span> </label>
+				<input type="range" id="slice-thickness" min="0" max="100" step="0.1" value="100" />
+			</div>
+
+			<div id="info">
+				<div>Points: <span id="point-count">-</span></div>
+				<div>Volume: <span id="volume-dims">-</span></div>
+				<div>Range: <span id="data-range">-</span></div>
+			</div>
+		</div>
+
+		<lume-scene
+			id="scene"
+			webgl
+			environment="https://rawcdn.githack.com/trusktr/assets/3437564ac855bb0551c25ae990aff94db488c36e/scratchspace/liminal-type/Grad_Hdri_05.jpg"
+		>
+			<lume-camera-rig min-distance="100" distance="300" horizontal-angle="90">
+				<lume-point-light
+					id="light"
+					slot="camera-child"
+					intensity="2500000"
+					color="#348EDD"
+					position="500 500 500"
+				></lume-point-light>
+			</lume-camera-rig>
+
+			<lume-element3d rotation="90 0 0">
+				<!-- Point cloud will be populated from volumetric brain data -->
+				<lume-points id="brain-points" has="clip-planes" clip-planes="#clip1, #clip2" color="deeppink">
+					<lume-element3d rotation="0 0 0" id="slice-rotator">
+						<!-- Clip planes to create a slice view -->
+						<lume-clip-plane id="clip1" size="300 300" mount-point="0.5 0.5" origin="0.5 0.5" rotation="0 -90">
+							<lume-plane
+								size-mode="p p"
+								size="1 1"
+								sidedness="double"
+								receive-shadow="false"
+								opacity="0.1"
+							></lume-plane>
+						</lume-clip-plane>
+						<lume-clip-plane id="clip2" size="300 300" mount-point="0.5 0.5" origin="0.5 0.5" rotation="0 90">
+							<lume-plane
+								size-mode="p p"
+								size="1 1"
+								sidedness="double"
+								receive-shadow="false"
+								opacity="0.1"
+							></lume-plane>
+						</lume-clip-plane>
+					</lume-element3d>
+				</lume-points>
+			</lume-element3d>
+		</lume-scene>
+
+		<script type="module" src="./index.js"></script>
+	</template>
+</live-code>
