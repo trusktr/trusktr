@@ -1,0 +1,11 @@
+{
+	"name": "scratchpad-holster",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"typecheck": "tsc -p tsconfig.json"
+	},
+	"devDependencies": {
+		"lume": "0.3.0-alpha.46"
+	}
+}

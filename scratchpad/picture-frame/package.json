@@ -1,0 +1,13 @@
+{
+	"name": "scratchpad-picture-frame",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"typecheck": "tsc -p tsconfig.json"
+	},
+	"devDependencies": {
+		"lume": "0.3.0-alpha.44",
+		"three": "0.168.0",
+		"@types/three": "^0.168.0"
+	}
+}

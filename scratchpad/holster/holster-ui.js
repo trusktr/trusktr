@@ -1,71 +1,70 @@
 import {Element, element, attribute, html, signalify, createMemo} from 'lume'
 import {stringToArray} from 'lume/dist/xyz-values/utils.js'
 
-export const HolsterUI = element('holster-ui')(
-	class HolsterUIElement extends Element {
-		static observedAttributeHandlers = {
-			leatherColors: attribute.string,
-		}
+class _HolsterUI extends Element {
+	static observedAttributeHandlers = {
+		leatherColors: attribute.string,
+	}
 
-		leatherColors = 'red green blue'
+	leatherColors = 'red green blue'
 
-		/** @type {() => string[]} */
-		#colorsArray = () => stringToArray(this.leatherColors)
+	/** @type {() => string[]} */
+	#colorsArray = () => stringToArray(this.leatherColors)
 
-		selectedBeltColor = 'red'
-		selectedHolsterColor = 'green'
+	selectedBeltColor = 'red'
+	selectedHolsterColor = 'green'
 
-		constructor() {
-			super()
+	constructor() {
+		super()
 
-			signalify(this, 'leatherColors', 'selectedBeltColor', 'selectedHolsterColor')
+		signalify(this, 'leatherColors', 'selectedBeltColor', 'selectedHolsterColor')
 
-			this.#colorsArray = createMemo(this.#colorsArray)
-		}
+		this.#colorsArray = createMemo(this.#colorsArray)
+	}
 
-		connectedCallback() {
-			super.connectedCallback()
-			console.log('CONNECTED')
+	connectedCallback() {
+		super.connectedCallback()
+		console.log('CONNECTED')
 
-			this.createEffect(() => {
-				console.log('this.selectedBeltColor', this.selectedBeltColor)
-				console.log('this.selectedHolsterColor', this.selectedHolsterColor)
-			})
-		}
+		this.createEffect(() => {
+			console.log('this.selectedBeltColor', this.selectedBeltColor)
+			console.log('this.selectedHolsterColor', this.selectedHolsterColor)
+		})
+	}
 
-		/** @returns {Node | Node[]} */
-		template = () => html`
-			<label>Belt color:</label>
-			<div class="colors">
-				${() =>
-					this.#colorsArray().map(
-						color => html`
-							<button
-								class=${() => 'color' + (this.selectedBeltColor === color ? ' active' : '')}
-								style=${`--color: ${color}`}
-								on:click=${() => (this.selectedBeltColor = color)}
-							></button>
-						`,
-					)}
-			</div>
+	/** @returns {Node | Node[]} */
+	template = () => html`
+		<label>Belt color:</label>
+		<div class="colors">
+			${() =>
+				this.#colorsArray().map(
+					color => html`
+						<button
+							class=${() => 'color' + (this.selectedBeltColor === color ? ' active' : '')}
+							style=${`--color: ${color}`}
+							on:click=${() => (this.selectedBeltColor = color)}
+						></button>
+					`,
+				)}
+		</div>
 
-			<label>Holster color:</label>
-			<div class="colors">
-				${() =>
-					this.#colorsArray().map(
-						color => html`
-							<button
-								class=${() => 'color' + (this.selectedHolsterColor === color ? ' active' : '')}
-								style=${`--color: ${color}`}
-								on:click=${() => (this.selectedHolsterColor = color)}
-							></button>
-						`,
-					)}
-			</div>
-		`
+		<label>Holster color:</label>
+		<div class="colors">
+			${() =>
+				this.#colorsArray().map(
+					color => html`
+						<button
+							class=${() => 'color' + (this.selectedHolsterColor === color ? ' active' : '')}
+							style=${`--color: ${color}`}
+							on:click=${() => (this.selectedHolsterColor = color)}
+						></button>
+					`,
+				)}
+		</div>
+	`
 
-		/** @type {string} */
-		css = /*css*/ `
+	/** @type {string} */
+	css = /*css*/ `
             :host {
                 color: black;
 
@@ -104,5 +103,7 @@ export const HolsterUI = element('holster-ui')(
                 border: 3px solid color-mix(in srgb, var(--color), white 40%);
             }
         `
-	},
-)
+}
+
+export const HolsterUI = element('holster-ui')(_HolsterUI)
+/** @typedef {InstanceType<typeof HolsterUI>} HolsterUI */

@@ -4,14 +4,12 @@
 		"start": "npm run dev",
 		"dev": "five-server . --open index.html --port=4444",
 		"prettier": "prettier . --write",
-		"typecheck": "tsc"
+		"typecheck": "tsc -b .",
+		"typecheck:root": "tsc -p .",
+		"typecheck:all": "pnpm run typecheck && pnpm run typecheck:root"
 	},
 	"devDependencies": {
-		"@types/pako": "^2.0.4",
-		"@types/three": "^0.181.0",
 		"five-server": "^0.4.5",
-		"lume": "^0.3.0-alpha.46",
-		"pako": "^2.1.0",
 		"prettier": "^3.4.2",
 		"typescript": "^5.9.3"
 	}

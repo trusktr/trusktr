@@ -1,5 +1,7 @@
 {
 	"compilerOptions": {
+		"composite": true,
+
 		"allowJs": true,
 		"checkJs": true,
 		"noEmit": true,
@@ -10,8 +12,16 @@
 		"lib": ["es2023", "dom", "dom.iterable"],
 		"isolatedModules": true,
 		"verbatimModuleSyntax": true,
-		"skipLibCheck": true, // Don't type check libraries, as that can be slow.
+		"skipLibCheck": true,
+		"skipDefaultLibCheck": true,
 
 		"strict": true
-	}
+	},
+	"include": ["importmap.js", "template.js"],
+	"references": [
+		{"path": "./scratchpad/brain"},
+		{"path": "./scratchpad/holster"},
+		{"path": "./scratchpad/liminal-type"},
+		{"path": "./scratchpad/picture-frame"}
+	]
 }

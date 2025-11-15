@@ -14,12 +14,13 @@
 // ```
 
 // Identity template tag for HTML formatting in IDEs (f.e. Prettier).
+/** @type {typeof String.raw} */
 const html = (strings, ...values) => String.raw(strings, ...values)
 
 {
 	const inIframe = window.parent !== window
 
-	const script = document.currentScript
+	const script = /** @type {HTMLScriptElement} */ (document.currentScript)
 	const title = script.getAttribute('title') ?? ''
 
 	const parentHref = () => {
