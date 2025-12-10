@@ -23,6 +23,15 @@ This repo is my personal README/profile, showcasing my work, projects, and writi
 - [Web origins](#web-origins)
 - [Career highlights](#career-highlights)
 - [Featured projects](#featured-projects)
+  - [ `lume`](#-lume)
+  - [ `@lume/element`](#-lumeelement)
+  - [ `nimble-html`](#-nimble-html)
+  - [ `glas`](#-glas)
+  - [ `asdom`](#-asdom)
+  - [ `classy-solid`](#-classy-solid)
+  - [ Docsify](#-docsify)
+  - [ Solid.js](#-solidjs)
+  - [ Personal Scratchpad](#-personal-scratchpad)
 - [Writing](#writing)
 - [Where to find me](#where-to-find-me)
 
@@ -75,8 +84,6 @@ Along the way, I've contributed to widely used open-source projects and shipped 
   </details>
 
 ## Featured projects
-
-
 
 ### <img width="300" src="https://repository-images.githubusercontent.com/28641272/f7af517c-e982-4c8d-8b78-4a080a597111" /><br/> `lume`
 
@@ -151,7 +158,6 @@ Demos, experiments, and small building blocks. Source is in [../scratchpad/](htt
 
 - HTML’s Graphical 3D Future — https://dev.to/trusktr/htmls-graphical-3d-future-3gnd
 - Docsify.js single-page apps are indexable on Google! — https://dev.to/trusktr/docsifyjs-single-page-apps-are-indexable-on-google-3loi
-- Featured CodePen demo — PLACEHOLDER_LINK (replace with your favorite pen)
 
 <!--
 
