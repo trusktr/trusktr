@@ -180,7 +180,7 @@ Demos, experiments, and small building blocks. Source is in [../scratchpad/](htt
 
 <picture> <source srcset="https://github.githubassets.com/favicons/favicon.svg" media="(prefers-color-scheme: light)" /> <source srcset="https://github.githubassets.com/favicons/favicon-dark.svg" media="(prefers-color-scheme: dark)" /> <img height="18" alt="GitHub icon"  /> </picture> **GitHub** — [@trusktr](https://github.com/trusktr) (experiments and code libraries)
 
-<img height="18" alt="CodePen icon" src="../images/codepen.svg" /> **CodePen** — [trusktr](https://codepen.io/trusktr)
+<img height="18" alt="CodePen icon" src="https://rawcdn.githack.com/trusktr/trusktr/04bcbc61b6e34060bdd675211e18269aa67790ae/images/codepen.svg" /> **CodePen** — [trusktr](https://codepen.io/trusktr)
 
 <img height="18" alt="X icon" src="https://abs.twimg.com/favicons/twitter.3.ico"> **X (formerly Twitter)** — [@trusktr](https://x.com/trusktr)
 
