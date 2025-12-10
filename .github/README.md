@@ -26,9 +26,9 @@ This repo is my personal README/profile, showcasing my work, projects, and writi
 - [Writing](#writing)
 - [Where to find me](#where-to-find-me)
 
-Along the way, I've contributed to widely used open-source projects and shipped production systems with teams at companies like **SpaceX**, **NASA**, **Velodyne Lidar**, and **IMVU** — building interfaces that connect humans to complex systems in real time.
-
 ## Resume
+
+Along the way, I've contributed to widely used open-source projects and shipped production systems with teams at companies like **SpaceX**, **NASA**, **Velodyne Lidar**, and **IMVU** — building interfaces that connect humans to complex systems in real time.
 
 [View or download my resume (PDF)](https://github.com/trusktr/assets/blob/main/Joe%20Pea%20Resume.pdf)
 
@@ -39,7 +39,7 @@ Along the way, I've contributed to widely used open-source projects and shipped 
 ## Career highlights
 
 <details>
-	<summary><strong>Career highlights (selected)</strong></summary>
+	<summary><strong>Career highlights</strong></summary>
 
 - **Lume Creative Technologies — Founder (Jul 2022–Present)**
   - Advisory/lead engineering for 3D web apps. Recent engagements include:
@@ -76,9 +76,11 @@ Along the way, I've contributed to widely used open-source projects and shipped 
 
 ## Featured projects
 
-<img width="300" src="https://repository-images.githubusercontent.com/28641272/f7af517c-e982-4c8d-8b78-4a080a597111" />
 
-**`lume`** — GPU-powered 3D HTML. New HTML elements for rich 2D/3D experiences with lights, shadows, models, and physics-like behaviors — all from markup. Under the hood, Lume composes WebGL and CSS3D while staying _HTML-first_ and framework-agnostic.
+
+### <img width="300" src="https://repository-images.githubusercontent.com/28641272/f7af517c-e982-4c8d-8b78-4a080a597111" /><br/> `lume`
+
+GPU-powered 3D HTML. New HTML elements for rich 2D/3D experiences with lights, shadows, models, and physics-like behaviors — all from markup. Under the hood, Lume composes WebGL and CSS3D while staying _HTML-first_ and framework-agnostic.
 
 - Why use it:
   - Write 3D like you write HTML — declarative, readable, and portable across React, Vue, Svelte, Solid, Angular, and vanilla.
@@ -86,9 +88,9 @@ Along the way, I've contributed to widely used open-source projects and shipped 
   - Designed for product teams: composable primitives, strong typing, and a steady release cadence.
 - Explore: [site](https://lume.io) · [docs/examples](https://docs.lume.io) · [repo](https://github.com/lume/lume)
 
-<img width="300" src="https://placehold.co/20x10/111827/FDE68A.svg?font=poppins&text=%40lume%2Felement" />
+### <img width="300" src="https://placehold.co/20x10/111827/FDE68A.svg?font=poppins&text=%40lume%2Felement" /><br/> `@lume/element`
 
-**`@lume/element`** — A fast, minimal system for writing Custom Elements with **reactive props**, **declarative templates** (JSX or `html` tag), and **scoped CSS**. Integrates cleanly with Solid.js’ fine-grained reactivity for predictable updates without a VDOM.
+A fast, minimal system for writing Custom Elements with **reactive props**, **declarative templates** (JSX or `html` tag), and **scoped CSS**. Integrates cleanly with Solid.js’ fine-grained reactivity for predictable updates without a VDOM.
 
 - Why use it:
   - Create interoperable web components that work in any app or framework.
@@ -96,10 +98,9 @@ Along the way, I've contributed to widely used open-source projects and shipped 
   - Batteries included: decorators, attribute-to-prop mapping, and framework type helpers.
 - Explore: [repo/docs/examples](https://github.com/lume/element)
 
-<img width="300" src="https://placehold.co/20x10/065F46/ECFEFF.svg?font=poppins&text=nimble-html" />
-<!-- ![nimble-html](https://repository-images.githubusercontent.com/1064917262/5c2a50a7-e8ab-453c-911f-ea07d809d316) -->
+### <img width="300" src="https://github.com/user-attachments/assets/99321456-4f1f-41b5-9302-e4cd7c282803" /><br /> `nimble-html`
 
-**`nimble-html`** — A single-file, zero-dependency `html`/`svg`/`mathml` template tag for declarative-reactive UIs. Render once, then update in place by calling the same template — no framework required.
+A single-file, zero-dependency `html`/`svg`/`mathml` template tag for declarative-reactive UIs. Render once, then update in place by calling the same template — no framework required.
 
 - Why use it:
   - Ultra-light: drop one file into any codebase; works with import maps/CDNs.
@@ -107,44 +108,44 @@ Along the way, I've contributed to widely used open-source projects and shipped 
   - Power features when you need them (`force()` updates, lightsaber `!` syntax, key-based instance identity).
 - Explore: [repo/examples](https://github.com/lume/nimble-html)
 
-<img width="300" src="https://placehold.co/20x10/0B132B/E2E8F0.svg?font=poppins&text=GLAS" />
+### <img width="300" src="https://placehold.co/20x10/0B132B/E2E8F0.svg?font=poppins&text=GLAS" /><br /> `glas`
 
-**GLAS** — WebGL in WebAssembly via AssemblyScript. A long-term effort to port Three.js primitives and patterns to a Wasm core for predictable performance and tighter memory profiles.
+Web**GL** in WebAssembly via **A**ssembly**S**cript. A long-term effort to port Three.js primitives and patterns to a Wasm core for predictable performance and tighter memory profiles.
 
 - Why use it (or follow it):
   - Push performance-sensitive graphics to Wasm while staying close to TypeScript ergonomics.
   - A stepping stone toward cross-runtime rendering with strong type guarantees.
 - Explore: [repo](https://github.com/lume/glas) · [contributing](https://github.com/lume/glas/blob/main/.github/CONTRIBUTING.md)
 
-<img width="300" src="https://placehold.co/20x10/7C3AED/F5F3FF.svg?font=poppins&text=asdom" />
+### <img width="300" src="https://placehold.co/20x10/7C3AED/F5F3FF.svg?font=poppins&text=asdom" /><br /> `asdom`
 
-**`asdom`** — DOM bindings for AssemblyScript so WebAssembly code can manipulate the DOM directly (including Custom Elements). Useful when hot code paths need to hop across the Wasm boundary efficiently.
+DOM bindings for AssemblyScript so WebAssembly code can manipulate the DOM directly (including Custom Elements). Useful when hot code paths need to hop across the Wasm boundary efficiently.
 
 - Why use it:
   - Call `document`, `window`, and Custom Elements APIs from AssemblyScript.
   - Bridges ergonomically with AssemblyScript projects and Wasm tooling.
 - Explore: [repo](https://github.com/lume/asdom) · [supported APIs](https://github.com/lume/asdom/blob/main/supported-APIs.md)
 
-<img width="300" src="https://placehold.co/20x10/7C3AED/F5F3FF.svg?font=poppins&text=classy-solid" />
+### <img width="300" src="https://placehold.co/20x10/7C3AED/F5F3FF.svg?font=poppins&text=classy-solid" /><br /> `classy-solid`
 
-**`classy-solid`** — Class-based reactivity and class components for Solid.js. Decorators like `@signal` and `@component` make class properties reactive and renderable.
+Class-based reactivity and class components for Solid.js. Decorators like `@signal` and `@component` make class properties reactive and renderable.
 
 - Why use it:
   - Keep OO ergonomics while using Solid’s fine-grained reactivity.
   - Cleaner composition, better DX in codebases that prefer classes.
 - Explore: [repo](https://github.com/lume/classy-solid)
 
-<img width="300" src="https://repository-images.githubusercontent.com/74260508/944c2000-2b5a-11eb-843f-d853ea98b9c7" />
+### <img width="300" src="https://repository-images.githubusercontent.com/74260508/944c2000-2b5a-11eb-843f-d853ea98b9c7" /><br /> Docsify
 
-**Docsify** (contributor) — Buildless documentation that “just works.” I’ve contributed improvements to developer experience and docs. Explore: [docsifyjs/docsify](https://github.com/docsifyjs/docsify)
+Buildless documentation that “just works.” Not my original project, I'm a contributor and maintainer now. Explore: [docsifyjs/docsify](https://github.com/docsifyjs/docsify)
 
-<img width="300" src="https://www.solidjs.com/og.jpg" />
+### <img width="300" src="https://www.solidjs.com/og.jpg" /><br /> Solid.js
 
-**Solid.js** (contributor) — Fine-grained reactivity that powers parts of Lume and `@lume/element`. See contributions in [solidjs/solid](https://github.com/solidjs/solid) (I’m listed among contributors).
+Fine-grained reactivity that powers parts of Lume and `@lume/element`. The framework that coined "signals and effects". Not my original project, I'm an early adopter and contributor. Explore: [solidjs/solid](https://github.com/solidjs/solid).
 
-<img width="300" src="https://gist.github.com/user-attachments/assets/8fc62fc4-7c33-403b-8df1-6daa4f98f529" />
+### <img width="300" src="https://github.com/user-attachments/assets/9943ab7b-186d-490b-a5b8-550169c7ef57" /><br /> [Personal Scratchpad](https://trusktr.github.io/trusktr)
 
-**[Personal Scratchpad](https://trusktr.github.io/trusktr)**: demos, experiments, and small building blocks. Source is in [../scratchpad/](https://github.com/trusktr/trusktr/tree/main/scratchpad).
+Demos, experiments, and small building blocks. Source is in [../scratchpad/](https://github.com/trusktr/trusktr/tree/main/scratchpad).
 
 ## Writing
 
@@ -173,7 +174,7 @@ Along the way, I've contributed to widely used open-source projects and shipped 
 
 <picture> <source srcset="https://github.githubassets.com/favicons/favicon.svg" media="(prefers-color-scheme: light)" /> <source srcset="https://github.githubassets.com/favicons/favicon-dark.svg" media="(prefers-color-scheme: dark)" /> <img height="18" alt="GitHub icon"  /> </picture> **GitHub** — [@trusktr](https://github.com/trusktr) (experiments and code libraries)
 
-<img height="18" alt="CodePen icon" srcset="../images/codepen.svg" /> **CodePen** — [trusktr](https://codepen.io/trusktr)
+<img height="18" alt="CodePen icon" src="../images/codepen.svg" /> **CodePen** — [trusktr](https://codepen.io/trusktr)
 
 <img height="18" alt="X icon" src="https://abs.twimg.com/favicons/twitter.3.ico"> **X (formerly Twitter)** — [@trusktr](https://x.com/trusktr)
 
