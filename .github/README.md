@@ -8,7 +8,9 @@ I help teams ship HTML-first accelerated interfaces without heavy toolchains.
 
 This repo is my personal README/profile, showcasing my work, projects, and writing, and will evolve over time.
 
+<!--
 ![PLACEHOLDER hero demo](https://placehold.co/1200x380/111827/E5E7EB.svg?font=poppins&text=PLACEHOLDER%20hero%20GIF%20or%20screenshot)
+-->
 
 ## At a glance <!-- omit in toc -->
 
@@ -74,65 +76,75 @@ Along the way, I've contributed to widely used open-source projects and shipped 
 
 ## Featured projects
 
-![Lume hero](https://placehold.co/960x280/0E7490/EFF6FF.svg?font=poppins&text=Lume%20%E2%80%94%203D%20HTML%20Elements)
+<img width="300" src="https://repository-images.githubusercontent.com/28641272/f7af517c-e982-4c8d-8b78-4a080a597111" />
 
-- **`lume`** — GPU-powered 3D HTML. New HTML elements for rich 2D/3D experiences with lights, shadows, models, and physics-like behaviors — all from markup. Under the hood, Lume composes WebGL and CSS3D while staying _HTML-first_ and framework-agnostic.
-  - Why use it:
-    - Write 3D like you write HTML — declarative, readable, and portable across React, Vue, Svelte, Solid, Angular, and vanilla.
-    - Hardware-accelerated visuals with a tiny mental model and live, forkable [examples](https://docs.lume.io/examples/hello-world/).
-    - Designed for product teams: composable primitives, strong typing, and a steady release cadence.
-  - Explore: [site](https://lume.io) · [docs/examples](https://docs.lume.io) · [repo](https://github.com/lume/lume)
+**`lume`** — GPU-powered 3D HTML. New HTML elements for rich 2D/3D experiences with lights, shadows, models, and physics-like behaviors — all from markup. Under the hood, Lume composes WebGL and CSS3D while staying _HTML-first_ and framework-agnostic.
 
-![@lume/element](https://placehold.co/960x220/111827/FDE68A.svg?font=poppins&text=%40lume%2Felement%20%E2%80%94%20Custom%20Elements%20made%20easy)
+- Why use it:
+  - Write 3D like you write HTML — declarative, readable, and portable across React, Vue, Svelte, Solid, Angular, and vanilla.
+  - Hardware-accelerated visuals with a tiny mental model and live, forkable [examples](https://docs.lume.io/examples/hello-world/).
+  - Designed for product teams: composable primitives, strong typing, and a steady release cadence.
+- Explore: [site](https://lume.io) · [docs/examples](https://docs.lume.io) · [repo](https://github.com/lume/lume)
 
-- **`@lume/element`** — A fast, minimal system for writing Custom Elements with **reactive props**, **declarative templates** (JSX or `html` tag), and **scoped CSS**. Integrates cleanly with Solid.js’ fine-grained reactivity for predictable updates without a VDOM.
-  - Why use it:
-    - Create interoperable web components that work in any app or framework.
-    - First-class TypeScript DX: autocompletion and strong types across JSX ecosystems.
-    - Batteries included: decorators, attribute-to-prop mapping, and framework type helpers.
-  - Explore: [repo/docs/examples](https://github.com/lume/element)
+<img width="300" src="https://placehold.co/20x10/111827/FDE68A.svg?font=poppins&text=%40lume%2Felement" />
 
-![nimble-html](https://placehold.co/960x220/065F46/ECFEFF.svg?font=poppins&text=nimble-html%20%E2%80%94%20Buildless%20reactive%20templates)
+**`@lume/element`** — A fast, minimal system for writing Custom Elements with **reactive props**, **declarative templates** (JSX or `html` tag), and **scoped CSS**. Integrates cleanly with Solid.js’ fine-grained reactivity for predictable updates without a VDOM.
 
+- Why use it:
+  - Create interoperable web components that work in any app or framework.
+  - First-class TypeScript DX: autocompletion and strong types across JSX ecosystems.
+  - Batteries included: decorators, attribute-to-prop mapping, and framework type helpers.
+- Explore: [repo/docs/examples](https://github.com/lume/element)
+
+<img width="300" src="https://placehold.co/20x10/065F46/ECFEFF.svg?font=poppins&text=nimble-html" />
 <!-- ![nimble-html](https://repository-images.githubusercontent.com/1064917262/5c2a50a7-e8ab-453c-911f-ea07d809d316) -->
 
-- **`nimble-html`** — A single-file, zero-dependency `html`/`svg`/`mathml` template tag for declarative-reactive UIs. Render once, then update in place by calling the same template — no framework required.
-  - Why use it:
-    - Ultra-light: drop one file into any codebase; works with import maps/CDNs.
-    - Real DOM, no VDOM; event/prop/boolean bindings and SVG/MathML namespaces built-in.
-    - Power features when you need them (`force()` updates, lightsaber `!` syntax, key-based instance identity).
-  - Explore: [repo/examples](https://github.com/lume/nimble-html)
+**`nimble-html`** — A single-file, zero-dependency `html`/`svg`/`mathml` template tag for declarative-reactive UIs. Render once, then update in place by calling the same template — no framework required.
 
-![GLAS](https://placehold.co/960x220/0B132B/E2E8F0.svg?font=poppins&text=GLAS%20%E2%80%94%20WebGL%20in%20WebAssembly)
+- Why use it:
+  - Ultra-light: drop one file into any codebase; works with import maps/CDNs.
+  - Real DOM, no VDOM; event/prop/boolean bindings and SVG/MathML namespaces built-in.
+  - Power features when you need them (`force()` updates, lightsaber `!` syntax, key-based instance identity).
+- Explore: [repo/examples](https://github.com/lume/nimble-html)
 
-- **GLAS** — WebGL in WebAssembly via AssemblyScript. A long-term effort to port Three.js primitives and patterns to a Wasm core for predictable performance and tighter memory profiles.
-  - Why use it (or follow it):
-    - Push performance-sensitive graphics to Wasm while staying close to TypeScript ergonomics.
-    - A stepping stone toward cross-runtime rendering with strong type guarantees.
-  - Explore: [repo](https://github.com/lume/glas) · [contributing](https://github.com/lume/glas/blob/main/.github/CONTRIBUTING.md)
+<img width="300" src="https://placehold.co/20x10/0B132B/E2E8F0.svg?font=poppins&text=GLAS" />
 
-![asdom](https://placehold.co/960x220/7C3AED/F5F3FF.svg?font=poppins&text=asdom%20%E2%80%94%20DOM%20APIs%20from%20AssemblyScript)
+**GLAS** — WebGL in WebAssembly via AssemblyScript. A long-term effort to port Three.js primitives and patterns to a Wasm core for predictable performance and tighter memory profiles.
 
-- **`asdom`** — DOM bindings for AssemblyScript so WebAssembly code can manipulate the DOM directly (including Custom Elements). Useful when hot code paths need to hop across the Wasm boundary efficiently.
-  - Why use it:
-    - Call `document`, `window`, and Custom Elements APIs from AssemblyScript.
-    - Bridges ergonomically with AssemblyScript projects and Wasm tooling.
-  - Explore: [repo](https://github.com/lume/asdom) · [supported APIs](https://github.com/lume/asdom/blob/main/supported-APIs.md)
+- Why use it (or follow it):
+  - Push performance-sensitive graphics to Wasm while staying close to TypeScript ergonomics.
+  - A stepping stone toward cross-runtime rendering with strong type guarantees.
+- Explore: [repo](https://github.com/lume/glas) · [contributing](https://github.com/lume/glas/blob/main/.github/CONTRIBUTING.md)
 
-![classy-solid](https://private-user-images.githubusercontent.com/23491276/413578188-f091e629-7752-4a1a-808c-8672c1da072c.svg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjMyNzUzNjIsIm5iZiI6MTc2MzI3NTA2MiwicGF0aCI6Ii8yMzQ5MTI3Ni80MTM1NzgxODgtZjA5MWU2MjktNzc1Mi00YTFhLTgwOGMtODY3MmMxZGEwNzJjLnN2Zz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTExMTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUxMTE2VDA2Mzc0MlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTFlNmQ3NWMzNTY1YmUxZmQwNWUwNjBmODZkZjIyMTdkN2RlZDQ5YzE1N2NjNzkxYWQ4YjE4NTI4ZDczMWFiMGMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.mHGskX1w7kVh_x5LzVcvnVdMHnZSwyRJhL-HwDrumoE)
+<img width="300" src="https://placehold.co/20x10/7C3AED/F5F3FF.svg?font=poppins&text=asdom" />
 
-- **`classy-solid`** — Class-based reactivity and class components for Solid.js. Decorators like `@signal` and `@component` make class properties reactive and renderable.
-  - Why use it:
-    - Keep OO ergonomics while using Solid’s fine-grained reactivity.
-    - Cleaner composition, better DX in codebases that prefer classes.
-  - Explore: [repo](https://github.com/lume/classy-solid)
+**`asdom`** — DOM bindings for AssemblyScript so WebAssembly code can manipulate the DOM directly (including Custom Elements). Useful when hot code paths need to hop across the Wasm boundary efficiently.
 
-![Docsify & Solid contributions](https://placehold.co/960x200/E5E7EB/111827.svg?font=poppins&text=Open%20source%20contributions%3A%20Docsify%20%26%20Solid.js)
+- Why use it:
+  - Call `document`, `window`, and Custom Elements APIs from AssemblyScript.
+  - Bridges ergonomically with AssemblyScript projects and Wasm tooling.
+- Explore: [repo](https://github.com/lume/asdom) · [supported APIs](https://github.com/lume/asdom/blob/main/supported-APIs.md)
 
-- **Docsify** (contributor) — Buildless documentation that “just works.” I’ve contributed improvements to developer experience and docs. Explore: [docsifyjs/docsify](https://github.com/docsifyjs/docsify)
-- **Solid.js** (contributor) — Fine-grained reactivity that powers parts of Lume and `@lume/element`. See contributions in [solidjs/solid](https://github.com/solidjs/solid) (I’m listed among contributors).
+<img width="300" src="https://placehold.co/20x10/7C3AED/F5F3FF.svg?font=poppins&text=classy-solid" />
 
-- [Personal Scratchpad](https://github.com/trusktr) with demos, experiments, and small building blocks.
+**`classy-solid`** — Class-based reactivity and class components for Solid.js. Decorators like `@signal` and `@component` make class properties reactive and renderable.
+
+- Why use it:
+  - Keep OO ergonomics while using Solid’s fine-grained reactivity.
+  - Cleaner composition, better DX in codebases that prefer classes.
+- Explore: [repo](https://github.com/lume/classy-solid)
+
+<img width="300" src="https://repository-images.githubusercontent.com/74260508/944c2000-2b5a-11eb-843f-d853ea98b9c7" />
+
+**Docsify** (contributor) — Buildless documentation that “just works.” I’ve contributed improvements to developer experience and docs. Explore: [docsifyjs/docsify](https://github.com/docsifyjs/docsify)
+
+<img width="300" src="https://www.solidjs.com/og.jpg" />
+
+**Solid.js** (contributor) — Fine-grained reactivity that powers parts of Lume and `@lume/element`. See contributions in [solidjs/solid](https://github.com/solidjs/solid) (I’m listed among contributors).
+
+<img width="300" src="https://gist.github.com/user-attachments/assets/8fc62fc4-7c33-403b-8df1-6daa4f98f529" />
+
+**[Personal Scratchpad](https://trusktr.github.io/trusktr)**: demos, experiments, and small building blocks. Source is in [../scratchpad/](https://github.com/trusktr/trusktr/tree/main/scratchpad).
 
 ## Writing
 
