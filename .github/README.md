@@ -156,8 +156,8 @@ Demos, experiments, and small building blocks. Source is in [../scratchpad/](htt
 
 ## Writing
 
-- HTML’s Graphical 3D Future — https://dev.to/trusktr/htmls-graphical-3d-future-3gnd
-- Docsify.js single-page apps are indexable on Google! — https://dev.to/trusktr/docsifyjs-single-page-apps-are-indexable-on-google-3loi
+- [HTML’s Graphical 3D Future](https://dev.to/trusktr/htmls-graphical-3d-future-3gnd)
+- [Docsify.js single-page apps are indexable on Google!](https://dev.to/trusktr/docsifyjs-single-page-apps-are-indexable-on-google-3loi)
 
 <!--
 
