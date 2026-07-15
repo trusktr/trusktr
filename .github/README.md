@@ -2,9 +2,7 @@
 
 I'm Joe Pea (a.k.a. trusktr 🛹) — a builder and maintainer focused on expanding what HTML can do for interactive, graphic-rich web experiences.
 
-I work on open web tooling, new HTML elements, and standards-aligned libraries that make it easier to create 2D and 3D experiences directly in the browser. I enjoy bringing together WebGL, WebAssembly, custom elements, and small, composable APIs that let people ship expressive, hardware-accelerated UIs without huge toolchains.
-
-I help teams ship HTML-first accelerated interfaces without heavy toolchains.
+I work on open web tooling, new HTML elements, and standards-aligned libraries that make it easier to create 2D and 3D experiences directly in the browser. I enjoy bringing together WebGL, WebAssembly, custom elements, and small, composable APIs that let people ship expressive, HTML-first, hardware-accelerated UIs without huge toolchains.
 
 This repo is my personal README/profile, showcasing my work, projects, and writing, and will evolve over time.
 
