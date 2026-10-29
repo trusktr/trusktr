@@ -35,7 +35,7 @@ This repo is my personal README/profile, showcasing my work, projects, and writi
 
 ## Resume
 
-Along the way, I've contributed to widely used open-source projects and shipped production systems with teams at companies like **SpaceX**, **NASA**, **Velodyne Lidar**, and **IMVU** — building interfaces that connect humans to complex systems in real time.
+Along the way, I've contributed to widely used open-source projects and shipped production systems with teams at companies like **Google**, **SpaceX**, **NASA**, **Velodyne Lidar**, and **IMVU** — building interfaces that connect humans to complex systems in real time.
 
 [View or download my resume (PDF)](https://github.com/trusktr/assets/blob/main/Joe%20Pea%20Resume.pdf)
 
